@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "description": "Casper x402 payment + reputation router for autonomous AI agents.",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "start": "node server/index.js",
