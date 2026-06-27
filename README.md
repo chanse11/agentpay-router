@@ -11,6 +11,11 @@ the **routing + reputation + policy layer** on top of it: deciding which
 services to buy, enforcing budget and reputation policy, and producing receipts
 other agents can verify before trusting a paid result.
 
+## Demo
+
+- Video walkthrough: [docs/agentpay-router-live-demo.mp4](docs/agentpay-router-live-demo.mp4)
+- Confirmed on-chain settlement tx: [`88b93c07…de5eb2`](https://testnet.cspr.live/deploy/88b93c07f02f316bd9edf514b797b9d1191001023360b14d23418d8040de5eb2) (Casper Testnet)
+
 ## Hackathon Fit
 
 Built for the **Casper Agentic Buildathon** ($150k), which launched alongside

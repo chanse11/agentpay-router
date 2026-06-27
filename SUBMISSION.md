@@ -17,8 +17,8 @@ payment on Casper Testnet — producing a verifiable on-chain receipt.
 
 ## Links
 
-- GitHub: <add your public repo URL>
-- Demo video: <add your public video URL>
+- GitHub: https://github.com/chanse11/agentpay-router
+- Demo video: https://github.com/chanse11/agentpay-router/blob/main/docs/agentpay-router-live-demo.mp4
 - Live example settlement tx (Casper Testnet):
   `88b93c07f02f316bd9edf514b797b9d1191001023360b14d23418d8040de5eb2`
   → https://testnet.cspr.live/deploy/88b93c07f02f316bd9edf514b797b9d1191001023360b14d23418d8040de5eb2
