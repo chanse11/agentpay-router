@@ -1,0 +1,20 @@
+{
+  "name": "agentpay-router",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Casper x402 payment + reputation router for autonomous AI agents.",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@make-software/casper-x402": "^1.0.0",
+    "casper-js-sdk": "5.0.12",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  }
+}

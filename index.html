@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AgentPay Router</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar" aria-label="AgentPay workspace">
+        <div class="brand">
+          <div class="brand-mark">AP</div>
+          <div>
+            <h1>AgentPay Router</h1>
+            <p>Casper x402 agent payments</p>
+          </div>
+        </div>
+
+        <section class="panel compact">
+          <div class="panel-heading">
+            <span>Network</span>
+            <strong>Casper Testnet</strong>
+          </div>
+          <div class="metric-grid">
+            <div>
+              <span>Agents</span>
+              <strong id="agentCount">3</strong>
+            </div>
+            <div>
+              <span>Services</span>
+              <strong id="serviceCount">4</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel compact">
+          <div class="panel-heading">
+            <span>Budget</span>
+            <strong id="budgetLabel">8.00 CSPR</strong>
+          </div>
+          <input id="budgetSlider" type="range" min="1" max="20" value="8" step="1">
+          <div class="range-labels">
+            <span>1</span>
+            <span>20 CSPR</span>
+          </div>
+        </section>
+
+        <section class="panel compact">
+          <div class="panel-heading">
+            <span>Policy</span>
+            <strong>Autonomous</strong>
+          </div>
+          <label class="switch-row">
+            <input id="autoPayToggle" type="checkbox" checked>
+            <span>Allow agent-initiated x402 payments</span>
+          </label>
+          <label class="switch-row">
+            <input id="reputationToggle" type="checkbox" checked>
+            <span>Require reputation verification</span>
+          </label>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Hackathon Prototype</p>
+            <h2>Autonomous agents pay each other for verified services.</h2>
+          </div>
+          <button id="runButton" class="primary-button" type="button">Run Agent Task</button>
+        </header>
+
+        <section class="hero-band" aria-label="Agent payment route">
+          <div class="route-card">
+            <div class="agent-node research">
+              <span>Research</span>
+              <strong>Market Analyst</strong>
+            </div>
+            <div class="route-line">
+              <span id="routePulse"></span>
+            </div>
+            <div class="agent-node router">
+              <span>x402</span>
+              <strong>Payment Router</strong>
+            </div>
+            <div class="route-line">
+              <span></span>
+            </div>
+            <div class="agent-node data">
+              <span>Data</span>
+              <strong>Yield Oracle</strong>
+            </div>
+          </div>
+          <div class="hero-copy">
+            <div class="status-pill" id="statusPill">Ready</div>
+            <p id="taskSummary">Give the research agent a budget, then let it decide whether buying external data is worth the cost.</p>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel task-panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="eyebrow">Task</p>
+                <h3>Agent Request</h3>
+              </div>
+              <select id="taskSelect" aria-label="Choose task">
+                <option value="yield">Find the best yield opportunity on Casper DeFi</option>
+                <option value="risk">Check counterparty risk before a treasury payment</option>
+                <option value="rwa">Price an RWA-backed credit note</option>
+              </select>
+            </div>
+            <div class="request-box" id="requestBox">
+              Research Agent needs fresh market data, protocol liquidity, and a verification receipt before recommending an allocation.
+            </div>
+            <div class="service-list" id="serviceList"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="eyebrow">Trace</p>
+                <h3>Autonomous Payment Flow</h3>
+              </div>
+              <button id="resetButton" class="ghost-button" type="button">Reset</button>
+            </div>
+            <ol class="trace-list" id="traceList"></ol>
+          </div>
+        </section>
+
+        <section class="content-grid lower">
+          <div class="panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="eyebrow">Casper</p>
+                <h3>On-chain Settlement Record</h3>
+              </div>
+              <span class="tag">Testnet</span>
+            </div>
+            <div class="receipt" id="receiptBox">
+              <div><span>deploy_hash</span><strong>pending</strong></div>
+              <div><span>payment_proof</span><strong>pending</strong></div>
+              <div><span>service_id</span><strong>pending</strong></div>
+              <div><span>reputation_delta</span><strong>pending</strong></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="eyebrow">Outcome</p>
+                <h3>Agent Decision</h3>
+              </div>
+              <span class="tag success" id="confidenceTag">No run yet</span>
+            </div>
+            <div class="decision" id="decisionBox">
+              The router will produce a verifiable payment receipt and a decision summary after the task runs.
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>

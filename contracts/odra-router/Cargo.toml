@@ -1,0 +1,28 @@
+[package]
+name = "agentpay-router-contract"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+odra = { version = "2.1.0", default-features = false }
+
+[dev-dependencies]
+odra-test = "2.1.0"
+
+[lib]
+crate-type = ["rlib"]
+doctest = false
+test = false
+
+[[bin]]
+name = "agentpay_router_build_contract"
+path = "bin/build_contract.rs"
+test = false
+
+[[bin]]
+name = "agentpay_router_build_schema"
+path = "bin/build_schema.rs"
+test = false
+
+[features]
+default = []
